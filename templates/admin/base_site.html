@@ -1,0 +1,9 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}"><img src="/media/item_images/Rlogo.png" width="60" height="40" alt = >  Rahul's Ecommerce</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

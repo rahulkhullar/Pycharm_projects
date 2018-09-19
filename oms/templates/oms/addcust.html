@@ -1,0 +1,55 @@
+{% extends "oms/base.html" %}
+
+{% block maincontent %}
+
+<section id="shop"> 
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 mx-auto text-left">
+            <h2 class="section-heading">Add customer details</h2>
+<!--            <hr class="my-4"> -->
+            <p class="mb-5">All items are geniue and are backed by moneyback guarantee!! {{ item_id }}</p> 
+          </div>
+        </div>
+        <div class="row">
+    <div class="col-lg-4 mx-left text-left">
+    <i class="fa fa-2x mb-3 "></i>
+
+ <form action="/oms/{{ item_id }}/savecust/" method="POST">
+     <!--<form action="/oms/savecust/" method="POST">-->
+         {% csrf_token %}
+  First name:<br>
+  <input type="text" name="first_name"><br>
+  Last name:<br>
+  <input type="text" name="last_name"><br>
+  Email Address:
+  <input type="text" name="email_address"><br>
+  <p class="mb-5">Address Details </p>
+  Street 1:
+  <input type="text" name="street1"><br>
+  Street 2:
+  <input type="text" name="street2"><br>
+  City:
+         <input type="text" name="state"><br>
+         State:
+  <input type="text" name="city"><br>
+  Country:
+  <!--<input type="text" name="country" value="US" disabled><br>-->
+         <input type="text" name="country"><br>
+  Zip Code:
+  <input type="text" name="zip_code"><br>
+  Primary Phone:
+  <input type="text" name="primary_phone"><br>
+  Secondary Phone:
+  <input type="text" name="secondary_phone"><br>
+  <input type="hidden" name="item_id" value="{{ item_id }}">
+
+  <input type="submit" value="Submit">
+</form>
+
+        </div>
+
+      </div>
+ </section>
+
+{% endblock %}
